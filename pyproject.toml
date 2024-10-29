@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "email-service"
+version = "0.1.0"
+description = ""
+authors = ["Lunarskii <lunarskii0@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydantic-settings = "^2.6.0"
+fastapi = "^0.115.4"
+uvicorn = "^0.32.0"
+gunicorn = "^23.0.0"
+pydantic = {extras = ["email"], version = "^2.9.2"}
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
