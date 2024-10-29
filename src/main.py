@@ -6,7 +6,6 @@ from fastapi import (
     status,
     HTTPException,
 )
-import uvicorn
 
 from settings import settings
 from schemas import Mail
@@ -29,7 +28,3 @@ async def send_mail(mail: Mail):
             smtp.send_message(email_message)
     except smtplib.SMTPAuthenticationError:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
-
-
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
